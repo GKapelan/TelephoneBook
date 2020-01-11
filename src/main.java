@@ -1,13 +1,21 @@
-import org.w3c.dom.ls.LSOutput;
-
-import java.lang.reflect.Array;
-import java.util.Arrays;
-import java.util.Dictionary;
 import java.util.HashMap;
 import java.util.Map;
 
 public class main {
     public static void main(String[] args) {
+
+        //chkText();
+
+        PhoneBook pb = new PhoneBook();
+
+        pb.add("Pavel",87456321452L);
+        pb.add("Pavel",87544421452L);
+        pb.add("Semjon", 89896389889L);
+
+        System.out.println(pb.get("Pael"));
+    }
+
+    private static void chkText(){
 
         String line = "Рассказывают, что древние греки очень любили\n" +
                 "виноград и после его сбора устраивали праздник в\n" +
@@ -69,7 +77,7 @@ public class main {
         Map<String, Integer> txt = new HashMap<String, Integer>();
 
         for (String s: text
-             ) {
+        ) {
 
             if (txt.containsKey(s.toLowerCase())) {
                 txt.put(s.toLowerCase(), txt.get(s.toLowerCase()) + 1);
@@ -81,7 +89,7 @@ public class main {
 
         System.out.print("Количество слова в тексте");
         for (Map.Entry<String, Integer> key: txt.entrySet()
-             ) {
+        ) {
             System.out.printf("\n%s = %d ", key.getKey(), key.getValue());
         }
     }
